@@ -1,0 +1,25 @@
+{% extends '_r.html' %}
+
+{% block title %}Login{% endblock title %}
+
+{% block content %}
+     {{ block.super }}
+     <form action="" method="post">
+     {% csrf_token %}
+     {{ form.as_p }}
+     <button type="submit">LogIn</button>
+     </form>
+{% endblock content %}
+
+
+
+{#{% extends '_r.html' %}#}
+{#{% block title %}Login{% endblock title %}#}
+{##}
+{#{% block content %}#}
+{#    <form action="" method="post">#}
+{#    {% csrf_token %}#}
+{#    {{ form.as_p }}#}
+{#    <button type="submit">LogIn</button>#}
+{#    </form>#}
+{#{% endblock content %}#}

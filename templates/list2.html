@@ -1,0 +1,25 @@
+{% extends '_r.html' %}
+{% block title %}list1{% endblock title %}
+
+{% block content %}
+    <div class="list-group-item">
+{% for i in cryptocurrency %}
+    <br>
+
+        <div class="card text-center">
+          <div class="card-header">
+            Api coingecko
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{i.name}}</h5>
+            <p class="card-text">usd price$ : {{ i.usd_price }}</p>
+            <a href="{% url 'detail_2' i.id %}" class="btn btn-primary">Go somewhere</a>
+          </div>
+          <div class="card-footer text-muted">
+            {{ i.datetime_moified }}
+          </div>
+        </div>
+    <br>
+{% endfor %}
+    </div>
+{% endblock content %}

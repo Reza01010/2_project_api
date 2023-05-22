@@ -1,0 +1,73 @@
+{% extends '_r.html' %}
+{% block title %}detail2__  {% endblock title %}
+
+{% block content %}
+
+    {% if b == True %}
+                <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+            <div class="card-header">API coingecko</div>
+            <div class="card-body">
+                <h5 class="card-title">{{ x.name }}</h5>
+                <p class="card-text">usd price$ : {{ x.current_price }}
+                    <br>
+                <p>{{ cryptocurrency.datetime_moified }}</p>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="{{ x.image }}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{ x.symbol }}</h5>
+                <p class="card-text">market_cap : {{ x.market_cap }}1</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">market_cap_rank: {{ x.market_cap_rank }}</li>
+                <li class="list-group-item">fully_diluted_valuation': {{ x.fully_diluted_valuation }}</li>
+                <li class="list-group-item">total_volume: {{ x.total_volume }}</li>
+                <li class="list-group-item">high_24h: {{ xhigh_24h }}</li>
+                <li class="list-group-item">low_24h: {{ x.low_24h }}</li>
+                <li class="list-group-item">price_change_24h: {{ x.price_change_24h }}</li>
+                <li class="list-group-item">price_change_percentage_24h: {{ x.price_change_percentage_24h }}</li>
+                <li class="list-group-item">market_cap_change_24h: {{ x.market_cap_change_24h }}</li>
+                <li class="list-group-item">market_cap_change_percentage_24h: {{ x.market_cap_change_percentage_24h }}</li>
+                <li class="list-group-item">circulating_supply: {{ x.circulating_supply }}</li>
+                <li class="list-group-item">total_supply: {{ x.total_supply }}</li>
+                <li class="list-group-item">max_supply: {{ x.max_supply }}</li>
+                <li class="list-group-item">ath: {{ x.ath }}</li>
+                <li class="list-group-item">ath_change_percentage: {{ x.ath_change_percentage }}</li>
+                <li class="list-group-item">ath_date: {{ x.ath_date }}</li>
+                <li class="list-group-item">atl: {{ x.atl }}</li>
+                <li class="list-group-item">atl_change_percentage: {{ x.atl_change_percentage }}</li>
+                <li class="list-group-item">atl_date: {{ x.atl_date }}</li>
+                <li class="list-group-item">roi: {{ x.roi }}</li>
+                <li class="list-group-item">last_updated: {{ x.last_updated }}</li>
+            </ul>
+        </div>
+    {% else %}
+        <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+            <div class="card-header">API coingecko</div>
+            <div class="card-body">
+                <h5 class="card-title">{{ x.name }}</h5>
+                <p class="card-text">usd price$ : {{ x.current_price }}
+                    <br>
+                <p>{{ cryptocurrency.datetime_moified }}</p>
+            </div>
+        </div>
+    {% endif %}
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

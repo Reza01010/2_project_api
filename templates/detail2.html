@@ -1,0 +1,14 @@
+{% extends '_r.html' %}
+{% block title %}detail1__  {% endblock title %}
+
+{% block content %}
+
+<div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+  <div class="card-header">{{ cryptocurrency.datetime_moified }}</div>
+  <div class="card-body">
+    <h5 class="card-title">{{cryptocurrency.name}}</h5>
+    <p class="card-text">usd price$ : {{ cryptocurrency.usd_price }}
+  </div>
+</div>
+
+{% endblock content %}
