@@ -82,26 +82,30 @@ def detail_2_view_api(request,pk):
 
 
 # ----=========================================================================⬇ ⏬ 🔻
+from rest_framework_simplejwt.authentication import JWTAuthentication
 
-
-class CoinCaBitcoinAndSeveralOtherCryptocurrencies1ListViewApi(generics.RetrieveAPIView):
+class CoinCaBitcoinAndSeveralOtherCryptocurrencies1ListViewApi(generics.ListAPIView):
     queryset = Cryptocurrency2.objects.filter(id=0)
     serializer_class = Cryptocurrency2Serializer
-    permission_classes = [IsAuthenticated]
-    # authentication_classes = [JWTAuthentication]
-    # authentication_classes = [TokenAuthentication]
+    # permission_classes = [AllowAny]
 
-    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    # authentication_classes = [TokenAuthentication,]
+
+    authentication_classes = [JWTAuthentication]
+
 
 # from rest_framework_jwt.authentication import JSONWebTokenAuthentication
 
-@permission_classes([IsAuthenticated])
+# @permission_classes([IsAuthenticated])
 def list_cryptocurrency_by_market_value_1_api(request):
     # Call def1() function to update information
     def1()
     http_request = HttpRequest()
     http_request.method = request.method
     http_request.GET = request.GET
+
     # Retrieve Cryptocurrency2 object with id=0
     cryptocurrency = get_object_or_404(Cryptocurrency2, id=0)
 
